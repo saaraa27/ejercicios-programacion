@@ -71,9 +71,12 @@ public class Main {
     }
 
     public static void fMostar(){
-        for (int i = 0; i<lista.size(); i++){
-            System.out.println("producto " + lista.peek() + " con fecha " + lista2.peek());
-        }
+            for (String producto : lista) {
+                System.out.print("Producto " + producto);
+            }
+            for (LocalDate fecha : lista2) {
+                System.out.print("Con fecha " + fecha);
+            }
     }
 
 
