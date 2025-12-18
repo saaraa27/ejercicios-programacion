@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
 
     final private static Scanner sc = new Scanner(System.in);
-    private static Map<String, Integer> agenda;
+    private static final Map<String, Integer> agenda = new java.util.HashMap<>();
     private static int opcion;
 
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class Main {
             menu();
             switch(opcion){
                 case 1:
-                    añadirNumero();
+                    anadirNumero();
                     break;
                 case 2:
                     borrarNumero();
@@ -46,7 +46,7 @@ public class Main {
         opcion = sc.nextInt();
     }
 
-    public static void añadirNumero() {
+    public static void anadirNumero() {
         String respuesta;
         do {
             System.out.println("Introduce el nombre:");
@@ -64,8 +64,10 @@ public class Main {
     public static void borrarNumero(){
         System.out.println("Introduce el numero del contacto a borrar:");
         int numero = sc.nextInt();
-        if(agenda.containsKey(numero)){
-            agenda.remove(numero);
+        if(agenda.containsValue(numero)){
+            String clave = getKey(numero);
+
+            agenda.remove(clave);
             System.out.println("Contacto borrado.");
         } else {
             System.out.println("Contacto no encontrado.");
@@ -76,7 +78,7 @@ public class Main {
     public static void buscarNumero(){
         System.out.println("Introduce el numero del contacto a buscar:");
         int numero = sc.nextInt();
-        if(agenda.containsKey(numero)){
+        if(agenda.containsValue(numero)){
             System.out.println("Contacto encontrado: " + agenda.get(numero));
         } else {
             System.out.println("Contacto no encontrado.");
