@@ -1,8 +1,5 @@
 public class Circulo {
     private int radio;
-    private double area;
-    private double longitud;
-    private double volumen;
 
     public Circulo(int radio) {
         this.radio = radio;
@@ -16,33 +13,9 @@ public class Circulo {
         this.radio = radio;
     }
 
-    public double getArea() {
-        return area;
-    }
+    public double calcularLongitud(){ return 2 * Math.PI * radio; }
 
-    public void setArea(double area) {
-        this.area = area;
-    }
+    public double calcularArea(){ return Math.PI * (radio * radio);}
 
-    public double getLongitud() {
-        return longitud;
-    }
-
-    public void setLongitud(double longitud) {
-        this.longitud = longitud;
-    }
-
-    public double getVolumen() {
-        return volumen;
-    }
-
-    public void setVolumen(double volumen) {
-        this.volumen = volumen;
-    }
-
-    void calcularLongitud(){ longitud = 2 * Math.PI * radio; }
-
-    void calcularArea(){ area = Math.PI * (radio * 2);}
-
-    void calcularVolumen(){ volumen = (4 * Math.PI * radio * radio * radio / 3);}
+    public double calcularVolumen(){ return  (4 * Math.PI * radio * radio * radio / 3);}
 }

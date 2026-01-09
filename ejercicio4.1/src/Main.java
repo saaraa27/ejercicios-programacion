@@ -1,14 +1,18 @@
+import java.util.Scanner;
 public class Main {
+
+    private static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Circulo c1 = new Circulo(5);
+        System.out.println("Ingresa el valor del radio");
+        int radio =  sc.nextInt();
+        Circulo c1 = new Circulo(radio);
 
-        c1.calcularArea();
-        System.out.println(c1.getArea());
 
-        c1.calcularLongitud();
-        System.out.println(c1.getLongitud());
+        System.out.println( c1.calcularArea());
 
-        c1.calcularVolumen();
-        System.out.println(c1.getVolumen());
+        System.out.println(c1.calcularLongitud());
+
+        System.out.println(c1.calcularVolumen());
     }
 }
